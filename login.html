@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    
+  </head>
+  <body>
+    <div style="margin-left:30%; margin-top:15%;">
+    <form action="">
+      <h2>Login</h2>
+      <input id="uname" autocomplete="off" placeholder="User Name" />
+      <button>login</button>
+    </form>
+  </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    
+<script>
+  $(function () {
+    $('form').submit(function(){
+      var uname = $('#uname').val();
+      localStorage.setItem('uname', uname);
+      location.href = "chat";
+      return false;
+    });
+  });
+</script>
+  </body>
+</html>
